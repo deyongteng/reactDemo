@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<div id="box"></div>
+<script type="text/babel">
+    const user = {  //声明的变量储存一个对象
+        firstName:"jack",
+        lastName:"perez"
+    }
+    function formatName(user){
+        return user.firstName + ' '+user.lastName;
+    }
+    const element = ( //挂载模板的变量 jsx的变量是需要“{}”包裹住，否则会失效
+            <h1>
+              hello,{formatName(user)}!
+            </h1>
+    );
+    ReactDOM.render(  //渲染虚拟dom树
+        element,
+        document.getElementById('root')//渲染到所指定的dom中
+    );
+</script>
+</body>
+</html>
